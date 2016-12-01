@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.thcic.intent"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+<uses-permission android:name="android.permission.CALL_PHONE"/>  
+ <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+   
+   <uses-permission android:name="android.permission.SEND_SMS" />
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        >
+        <activity
+            android:name="cn.thcic.intent.FirstActivity"
+            android:label="intent测试"
+             >
+           <intent-filter>
+                
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            
+        </activity>
+    <!--cn.thcic.intent.MY_ACTION  -->
+         <activity
+            android:name="cn.thcic.intent.AllActivity"
+            android:label="intent常用系统功能测试"
+            android:permission="android.permission.SEND_SMS"
+           >
+           
+              
+             
+        </activity>
+        <activity
+            android:name="cn.thcic.intent.SecondActivity"
+            android:label="intent--Second"
+             >
+         <intent-filter>
+			  <action android:name="cn.thcic.intent.MY_ACTION"/><!--自定义有含义的字符串  为了接收请求    不用存在 只是测试一下action跳转  -->
+			  <category android:name="android.intent.category.DEFAULT"/><!--必须要有的  -->
+		</intent-filter>
+            </activity>
+        <activity
+            android:name="cn.thcic.intent.ComponentNameActivity"
+            android:label="intent--ComponentNameActivity"
+        >
+            <intent-filter>
+			  <action android:name="cn.thcic.intent.MY_ACTION"/><!--不用存在 只是测试一下action跳转  -->
+			  <category android:name="cn.thcic.intent.MY_CATEGORY"/><!-- 自定义类别  有含义的字符串 -->
+			  <category android:name="android.intent.category.DEFAULT"/>
+			</intent-filter>
+            </activity>
+           
+        <activity
+            android:name="cn.thcic.intent.ActionActivity"
+            android:label="intent--ACtionActivity"
+             >
+         <intent-filter>
+			  <action android:name="cn.thcic.intent.MY_ACTION"/><!--不用存在 只是测试一下action跳转  -->
+			    <category android:name="cn.thcic.intent.MY_CATEGORY"/><!-- 自定义类别  有含义的字符串 -->
+			  <category android:name="android.intent.category.DEFAULT"/>
+	</intent-filter>
+              
+         
+         
+            </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,6 @@
+  <intent-filter>
+			  <action android:name="cn.thcic.intent.MY_ACTION"/><!--不用存在 只是测试一下action跳转  -->
+			  <category android:name="android.intent.category.DEFAULT"/>
+	</intent-filter>
+	
+	当一个action在多个activity中配置了，系统会弹出选择框，让你进行选择
